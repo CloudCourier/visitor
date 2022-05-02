@@ -1,0 +1,78 @@
+.searchFormContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .searchResult {
+    flex: 1;
+  }
+  .ConversationContainer {
+    border-top: 1px solid rgb(229, 229, 229);
+    flex: 0 1 auto;
+    margin-bottom: 10px;
+    .conversation {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      height: 35px;
+      position: relative;
+
+      .conversationLogo {
+        width: 50px;
+
+        img {
+          position: absolute;
+          background-color: #fff;
+          width: 35px;
+          border-radius: 50%;
+          height: 35px;
+          top: 0px;
+
+          &:nth-child(1) {
+            left: 0;
+          }
+
+          &:nth-child(2) {
+            left: 13px;
+          }
+
+          &:nth-child(3) {
+            left: 26px;
+          }
+        }
+      }
+
+      .conversationdetail {
+        flex: 1;
+        margin-left: 35px;
+        font-size: 14px;
+        color: rgb(115, 115, 118);
+      }
+
+      .conversationGo {
+        width: 50px;
+      }
+    }
+
+    .sendBtn {
+      background-color: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      color: #666;
+      font-weight: 500;
+      padding: 0 12px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+      line-height: 40px;
+      height: 40px;
+
+      &:hover {
+        border-color: #666;
+        cursor: pointer;
+      }
+    }
+  }
+}
