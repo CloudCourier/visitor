@@ -2,6 +2,7 @@ import './reset.scss';
 import CustomIframe from '@/components/customIframe';
 import { useState } from 'react';
 import message from '@images/message.svg';
+import arrowdown from '@images/arrowdown.svg';
 import Home from '@/page/home';
 // iframe 样式只能写内联
 function App() {
@@ -68,7 +69,11 @@ function App() {
             }}
             onClick={() => setChatWindow(!chatWindow)}
           >
-            <img src={message} style={{ height: '70%' }} alt="message" />
+            {chatWindow ? (
+              <img src={message} style={{ height: '70%' }} alt="message" />
+            ) : (
+              <img src={arrowdown} style={{ height: '70%' }} alt="message" />
+            )}
           </div>
         </div>
       </CustomIframe>
