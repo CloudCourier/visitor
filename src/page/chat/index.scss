@@ -50,8 +50,7 @@
         line-height: 30px;
         text-align: center;
         background-color: #efefef;
-        border: 2px solid #fff;
-        border-radius: 10px;
+        border-radius: 50%;
         box-sizing: border-box;
         overflow: hidden;
 
@@ -78,6 +77,8 @@
     .msgContainer {
       flex: 1;
       position: relative;
+      background-image: url('@/assets/images/backgroundPic.jpg');
+      background-repeat: repeat;
 
       .msgPanel {
         position: absolute;
@@ -112,7 +113,8 @@
 
     .sendContainer {
       box-shadow: transparent 0px 0px 0px;
-      border-top: 1px solid #f7f7f9;
+      border-top: 1px solid #e9e6e6;
+      ;
       background-color: #fff;
       color: #92929e;
       // height: 50px;
