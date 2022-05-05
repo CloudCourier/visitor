@@ -6,7 +6,7 @@ import arrowdown from '@images/arrowdown.svg';
 import Home from '@/page/home';
 // iframe 样式只能写内联
 function App() {
-  const [chatWindow, setChatWindow] = useState(true);
+  const [chatWindow, setChatWindow] = useState(false);
   return (
     <div id="maxContain">
       <CustomIframe
@@ -70,9 +70,9 @@ function App() {
             onClick={() => setChatWindow(!chatWindow)}
           >
             {chatWindow ? (
-              <img src={message} style={{ height: '70%' }} alt="message" />
-            ) : (
               <img src={arrowdown} style={{ height: '70%' }} alt="message" />
+            ) : (
+              <img src={message} style={{ height: '70%' }} alt="message" />
             )}
           </div>
         </div>

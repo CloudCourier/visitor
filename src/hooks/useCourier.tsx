@@ -8,7 +8,6 @@ import {
   ProtocolState,
   ClientboundMessagePacket,
   ClientboundAssignMemberPacket,
-  Packet,
   ServerboundMessagePacket,
 } from '@cloud-courier/cloud-courier-lib';
 import { openDB } from 'idb/with-async-ittr';
