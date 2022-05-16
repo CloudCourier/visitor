@@ -8,7 +8,6 @@ const CustomIframe = props => {
   const doc = contentRef?.contentWindow?.document;
   const mountNode = doc?.body;
   const mountHead = doc?.head;
-
   return (
     <iframe style={style} ref={setContentRef}>
       <FrameContextProvider value={{ document: doc }}>

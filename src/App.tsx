@@ -1,11 +1,18 @@
 import './reset.scss';
 import CustomIframe from '@/components/customIframe';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import message from '@images/message.svg';
 import arrowdown from '@images/arrowdown.svg';
 import Home from '@/page/home';
 // iframe 样式只能写内联
 function App() {
+  const iconRef = useRef<HTMLDivElement>();
+  useEffect(() => {
+    setTimeout(() => {
+      iconRef.current.style.opacity = '1';
+      // TODO 暂时用延时来解决CustomIframe样式文件未加载问题
+    }, 1000);
+  }, []);
   const [chatWindow, setChatWindow] = useState(false);
   return (
     <div id="maxContain">
@@ -55,26 +62,27 @@ function App() {
           </>
         }
       >
-        <div>
-          <div
-            style={{
-              backgroundColor: 'rgb(0,30,43)',
-              height: '100%',
-              width: '100%',
-              borderRadius: '50%',
-              padding: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            onClick={() => setChatWindow(!chatWindow)}
-          >
-            {chatWindow ? (
-              <img src={arrowdown} style={{ height: '70%' }} alt="message" />
-            ) : (
-              <img src={message} style={{ height: '70%' }} alt="message" />
-            )}
-          </div>
+        <div
+          ref={iconRef}
+          style={{
+            backgroundColor: 'rgb(0,30,43)',
+            height: '100%',
+            width: '100%',
+            borderRadius: '50%',
+            padding: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: '0',
+            transition: 'opacity 0.3s ease-in-out',
+          }}
+          onClick={() => setChatWindow(!chatWindow)}
+        >
+          {chatWindow ? (
+            <img src={arrowdown} style={{ height: '70%' }} alt="arrowdown" />
+          ) : (
+            <img src={message} style={{ height: '70%' }} alt="message" />
+          )}
         </div>
       </CustomIframe>
     </div>
