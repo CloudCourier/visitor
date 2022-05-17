@@ -7,7 +7,6 @@ const { IS_DEV, SRC_PATH, IS_PRO, BUILD_PATH } = variable;
 module.exports = {
   entry: {
     index: path.join(SRC_PATH, 'index.tsx'),
-    
   },
   output: {
     path: BUILD_PATH,

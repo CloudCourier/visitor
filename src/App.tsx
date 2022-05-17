@@ -6,12 +6,15 @@ import arrowdown from '@images/arrowdown.svg';
 import Home from '@/page/home';
 // iframe 样式只能写内联
 function App() {
-  const iconRef = useRef<HTMLDivElement>();
+  const iconRef = useRef<HTMLIFrameElement>();
   useEffect(() => {
+    // TODO 暂时用延时来解决CustomIframe样式文件未加载问题
+    setTimeout(() => {
+      iconRef.current.style.display = 'flex';
+    }, 1000);
     setTimeout(() => {
       iconRef.current.style.opacity = '1';
-      // TODO 暂时用延时来解决CustomIframe样式文件未加载问题
-    }, 1000);
+    }, 1500);
   }, []);
   const [chatWindow, setChatWindow] = useState(false);
   return (
@@ -70,11 +73,11 @@ function App() {
             width: '100%',
             borderRadius: '50%',
             padding: '10px',
-            display: 'flex',
+            display: 'none',
             alignItems: 'center',
             justifyContent: 'center',
             opacity: '0',
-            transition: 'opacity 0.3s ease-in-out',
+            transition: 'all 0.5s ease-in-out',
           }}
           onClick={() => setChatWindow(!chatWindow)}
         >
