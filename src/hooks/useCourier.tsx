@@ -37,7 +37,7 @@ export interface Result {
 export default function useCourier(
   //
   name = '访客',
-  projectToken = 'GghsRv08FRHh8Di5Wwj9g0eNY7UKkTgN0sq0YkW7An4',
+  projectToken = 'dI5yNll501vn_eiSvL9QMytRECX6UwPwXioHw98Jf2E=',
   Options: Options = {},
 ) {
   const { reconnectLimit = 3, reconnectInterval = 3 * 1000 } = Options;

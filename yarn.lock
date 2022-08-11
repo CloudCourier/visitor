@@ -1022,10 +1022,10 @@
   resolved "https://registry.npmmirror.com/@blackblock/use-idb/-/use-idb-0.1.3.tgz#e118742f77190f677d57e00a5041bb8d2bbb6475"
   integrity sha512-kDa1Cxgo8k9kDI9OJc/mKUPDC70zNLa6pYZJ1GKGdeE0BZ7vaYdnTCzR58hx1AUphcJDH3IOiXy9fP1t6QEZFw==
 
-"@cloud-courier/cloud-courier-lib@^0.0.5":
-  version "0.0.5"
-  resolved "https://nexus.sunxinao.cn/repository/npm-group/@cloud-courier/cloud-courier-lib/-/cloud-courier-lib-0.0.5.tgz#22298ec38afe37ac2b0aca19addc9e353f66f93f"
-  integrity sha512-fCBryCVsb7o1f3brXy55VTMT0aPC0Sjjtx4kdEpuUognm0nnjtY5Ca+lK5XUQ0WFe6kB34EegcULz66cF1Xstw==
+"@cloud-courier/cloud-courier-lib@^0.0.6":
+  version "0.0.6"
+  resolved "https://nexus.sunxinao.cn/repository/npm-group/@cloud-courier/cloud-courier-lib/-/cloud-courier-lib-0.0.6.tgz#f020a7032f50f3daff4941012b99d9465494835a"
+  integrity sha512-P2mCc0aj0mkCotrgMxe/jkDz8VYaMkYLnfAuK6D4Hvc0NbgJbwqdE/c0EuwWqKYZeEWBHPTQXPvloElRPez0Bw==
   dependencies:
     axios "^0.26.0"
     long "^5.2.0"

@@ -18,8 +18,8 @@ function Chat() {
   const [msg, setMsg] = useState('');
   const [showEmojiModal, setEmojiModal] = useState(false);
   const { courierName, avatar, connect, courierKey, message, readyState, sendMessage } = useCourier(
-    '从来就没有什么救世主 也不要什么神仙皇帝 要创造人类的幸福 全靠我们自己 ',
-    'v8oJ_YNkOWXDcQ90Z9PAi4JcCs1NstgT5unDFf7LKWc=',
+    '访客1',
+    '6jgvmwYt-MSSdAJVf5-7hnxQ8tDxO6goliFC-9a8bws=',
   );
   const [reconnectNumber, setReconnectNumber] = useState(0);
 
