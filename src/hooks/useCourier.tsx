@@ -9,6 +9,7 @@ import {
   ClientboundMessagePacket,
   ClientboundAssignMemberPacket,
   ServerboundMessagePacket,
+  ClientboundDisconnectPacket,
 } from '@cloud-courier/cloud-courier-lib';
 import { openDB } from 'idb/with-async-ittr';
 import { useEffect, useRef, useState } from 'react';
@@ -137,6 +138,8 @@ export default function useCourier(
             } else if (packet instanceof ClientboundMessagePacket) {
               // 接收到消息
               const { content, source, target } = packet;
+              console.log('packet', packet);
+
               const timestamp = packet.timestamp.toNumber();
               instanceDB.then(async e => {
                 const tx = e.transaction('courierList', 'readwrite');
@@ -163,6 +166,8 @@ export default function useCourier(
               });
             } else if (packet instanceof ClientboundAssignMemberPacket) {
               // 分配客服
+              console.log('客服', packet);
+
               const { avatar, key, name } = packet;
               setCourierKey(key);
               setCourierName(name);
@@ -183,6 +188,8 @@ export default function useCourier(
                   }
                 });
               });
+            } else if (packet instanceof ClientboundDisconnectPacket) {
+              console.log('断开链接packet', packet);
             }
           },
           packetSent({ packet }) {
