@@ -1,0 +1,1 @@
+export const WINDOW_PROJECT_TOKEN = '__clour_courier_token__'

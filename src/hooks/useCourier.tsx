@@ -12,9 +12,10 @@ import {
   ClientboundDisconnectPacket,
 } from '@cloud-courier/cloud-courier-lib';
 import { openDB } from 'idb/with-async-ittr';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import useMemoizedFn from '@/hooks/useMemoizedFn';
 import useUnmount from '@/hooks/useUnmount';
+import { WINDOW_PROJECT_TOKEN } from '@/consts';
 
 export interface Options {
   reconnectLimit?: number;
@@ -30,15 +31,12 @@ export interface Result {
 }
 
 /**
- * @param {string} projectToken 访问网站的 projectToken
  * @param {string} name 访客名字
  * @param {object} options 选项
  * @description 初始化客服实例
  */
 export default function useCourier(
-  //
   name = '访客',
-  projectToken = 'dI5yNll501vn_eiSvL9QMytRECX6UwPwXioHw98Jf2E=',
   Options: Options = {},
 ) {
   const { reconnectLimit = 3, reconnectInterval = 3 * 1000 } = Options;
@@ -105,9 +103,8 @@ export default function useCourier(
     // 预认证
     cloudCourier
       .preAuth({
-        projectToken,
-        // document.referrer
-        referer: 'https://www.google.com',
+        projectToken: window[WINDOW_PROJECT_TOKEN],
+        referer: document.referrer,
         name,
       })
       .then(() => {

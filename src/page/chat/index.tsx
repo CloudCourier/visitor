@@ -5,11 +5,11 @@ import 'emoji-mart-virtualized/css/emoji-mart.css';
 import { IconMenu, IconFilpVertical, IconEmoji, IconChevronLeft } from '@douyinfe/semi-icons';
 import { useState, useRef, useMemo, useEffect, useContext } from 'react';
 import i18 from './i18';
-import styles from './index.scss';
 import useCourier from '@/hooks/useCourier';
 import { ProtocolState } from '@cloud-courier/cloud-courier-lib/lib/data-models';
 import { useFrame } from '@/components/customIframe';
 import { pageController } from '../home';
+import styles from './index.scss';
 
 function Chat() {
   const setChatPage = useContext(pageController);
@@ -17,10 +17,7 @@ function Chat() {
   const scroll = useRef<HTMLDivElement>();
   const [msg, setMsg] = useState('');
   const [showEmojiModal, setEmojiModal] = useState(false);
-  const { courierName, avatar, connect, courierKey, message, readyState, sendMessage } = useCourier(
-    '访客1',
-    '6jgvmwYt-MSSdAJVf5-7hnxQ8tDxO6goliFC-9a8bws=',
-  );
+  const { courierName, avatar, connect, courierKey, message, readyState, sendMessage } = useCourier('访客1');
   const [reconnectNumber, setReconnectNumber] = useState(0);
 
   useEffect(() => {
